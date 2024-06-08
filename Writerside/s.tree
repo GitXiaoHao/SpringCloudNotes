@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="s"
+                 name="SpringCloud"
+                 start-page="starter-topic.md">
+
+    <toc-element topic="注册中心.md"/>
+    <toc-element topic="网关.md"/>
+    <toc-element topic="OpenFeign.md"/>
+    <toc-element topic="SpringCloud.md"/>
+    <toc-element topic="starter-topic.md"/>
+    <toc-element topic="配置管理.md"/>
+    <toc-element topic="微服务保护和分布式事务-雪崩问题.md"/>
+    <toc-element topic="Sentinel.md"/>
+    <toc-element topic="微服务保护和分布式事务-分布式事务.md"/>
+    <toc-element topic="分布式事务-XA模式.md"/>
+    <toc-element topic="分布式事务-AT模式.md"/>
+    <toc-element topic="Jmeter快速入门.md"/>
+</instance-profile>
