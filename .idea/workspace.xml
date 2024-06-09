@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72c3332f-ed88-4ece-b836-4f6fb9621236" name="更改" comment="commit" />
+    <list default="true" id="72c3332f-ed88-4ece-b836-4f6fb9621236" name="更改" comment="commit">
+      <change afterPath="$PROJECT_DIR$/Writerside/images/direct1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/direct2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/fanout1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/fanout2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/fanout3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/mq1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/mq2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/mq3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/mq4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/topics/RabbitMQ.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/topics/RabbitMQ高级.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/s.tree" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/s.tree" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,18 +40,18 @@
     </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "GitXiaoHao"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;GitXiaoHao&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/GitXiaoHao/SpringCloudNotes.git",
-    "accountId": "90513cac-7fcf-467c-8701-e3fec0e79b0a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/GitXiaoHao/SpringCloudNotes.git&quot;,
+    &quot;accountId&quot;: &quot;90513cac-7fcf-467c-8701-e3fec0e79b0a&quot;
   }
-}]]></component>
+}</component>
   <component name="InstanceColorv3">
     <option name="map">
       <map>
@@ -75,7 +89,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2hNKhYpGn1HxIvths4672vhTjO5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -84,14 +100,15 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "I:/Writerside/SpringCloud/Writerside/seata",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
+    "last_opened_file_path": "E:/dasktop/zh.241.190.zip",
+    "settings.editor.selected.configurable": "http.certificates",
     "writerside.last.selected.productSpringCloud": "s"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="I:\Writerside\SpringCloud\Writerside\seata" />
+      <recent name="I:\Writerside\SpringCloud\.idea" />
       <recent name="I:\Writerside\SpringCloud\Writerside\seata\seata" />
       <recent name="I:\Writerside\SpringCloud\Writerside" />
     </key>
