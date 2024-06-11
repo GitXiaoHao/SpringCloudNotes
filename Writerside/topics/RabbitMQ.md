@@ -161,7 +161,7 @@ spring:
         rabbitTemplate.convertAndSend(exchangeName,"",message);
     }
 ```
-## Direct 交换机 - 丁香路有
+## Direct 交换机 - 定向路由
 - Direct Exchange 会将接收到的消息根据规则路由到指定的Queue，因此称为定向路由
   - 每一个Queue都与Exchange设置一个BindingKey
   - 发布者发送消息时，指定消息的RoutingKey

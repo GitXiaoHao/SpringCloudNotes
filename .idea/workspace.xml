@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c3332f-ed88-4ece-b836-4f6fb9621236" name="更改" comment="commit">
-      <change afterPath="$PROJECT_DIR$/Writerside/images/direct1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/direct2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/fanout1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/fanout2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/fanout3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/mq1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/mq2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/mq3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/mq4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/topics/RabbitMQ.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/topics/RabbitMQ高级.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/delayMessage1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/delayMessage2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/delayMessage3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/dlx1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/es1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/es2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/es3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/ik1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/ik2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/lazyQueue1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/mq/rabbitmq_delayed_message_exchange-3.13.0.ez" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/topics/Elasticsearch.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Writerside/s.tree" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/s.tree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/RabbitMQ.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/RabbitMQ.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/RabbitMQ高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/RabbitMQ高级.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,13 +103,14 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "E:/dasktop/zh.241.190.zip",
-    "settings.editor.selected.configurable": "http.certificates",
+    "last_opened_file_path": "I:/Writerside/SpringCloud/Writerside/mq",
+    "settings.editor.selected.configurable": "preferences.general",
     "writerside.last.selected.productSpringCloud": "s"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\Writerside\SpringCloud\Writerside\mq" />
       <recent name="I:\Writerside\SpringCloud\Writerside\seata" />
       <recent name="I:\Writerside\SpringCloud\.idea" />
       <recent name="I:\Writerside\SpringCloud\Writerside\seata\seata" />

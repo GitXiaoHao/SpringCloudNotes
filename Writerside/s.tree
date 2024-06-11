@@ -8,6 +8,7 @@
 
     <toc-element topic="RabbitMQ.md"/>
     <toc-element topic="RabbitMQ高级.md"/>
+    <toc-element topic="Elasticsearch.md"/>
     <toc-element topic="注册中心.md"/>
     <toc-element topic="网关.md"/>
     <toc-element topic="OpenFeign.md"/>
