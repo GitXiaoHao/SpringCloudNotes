@@ -227,3 +227,308 @@ POST /_analyze
 ### 操作
 - 提供的所有API都是Restful的接口，遵循Restful的基本规范
 ![es3.png](es3.png)
+#### 索引库的CRUD
+##### 创建索引库和映射
+- 请求方式：PUT
+- 请求路径：/索引库名，可以自定义
+- 请求参数：mapping映射
+```
+PUT /索引库名称
+{
+  "mappings": {
+    "properties": {
+      "字段名":{
+        "type": "text",
+        "analyzer": "ik_smart"
+      },
+      "字段名2":{
+        "type": "keyword",
+        "index": "false"
+      },
+      "字段名3":{
+        "properties": {
+          "子字段": {
+            "type": "keyword"
+          }
+        }
+      },
+      // ...略
+    }
+  }
+}
+
+```
+##### 查询索引库
+-  请求方式：GET
+-  请求路径：/索引库名
+-  请求参数：无 
+`GET /索引库名`
+##### 修改索引库
+- 倒排索引结构虽然不复杂，但是一旦数据结构改变（比如改变了分词器），就需要重新创建倒排索引，这简直是灾难。因此索引库一旦创建，无法修改mapping。
+- 虽然无法修改mapping中已有的字段，但是却允许添加新的字段到mapping中，因为不会对倒排索引产生影响。因此修改索引库能做的就是向索引库中添加新字段，或者更新索引库的基础属性。
+```
+PUT /索引库名/_mapping
+{
+  "properties": {
+    "新字段名":{
+      "type": "integer"
+    }
+  }
+}
+```
+##### 删除索引库
+- 请求方式：DELETE
+- 请求路径：/索引库名
+- 请求参数：无 
+`DELETE /索引库名`
+## 文档操作
+- 有了索引库，接下来就可以向索引库中添加数据了。
+- Elasticsearch中的数据其实就是JSON风格的文档。操作文档自然保护增、删、改、查等几种常见操作，我们分别来学习。
+### 新增文档
+```
+
+POST /索引库名/_doc/文档id
+{
+    "字段1": "值1",
+    "字段2": "值2",
+    "字段3": {
+        "子属性1": "值3",
+        "子属性2": "值4"
+    },
+}
+```
+### 查询文档
+`GET /{索引库名称}/_doc/{id}`
+### 删除文档
+`DELETE /{索引库名}/_doc/id值`
+### 修改文档
+修改有两种方式：
+- 全量修改：直接覆盖原来的文档
+- 局部修改：修改文档中的部分字段
+  - 注意：如果根据id删除时，id不存在，第二步的新增也会执行，也就从修改变成了新增操作了。
+#### 全量修改
+```
+PUT /{索引库名}/_doc/文档id
+{
+    "字段1": "值1",
+    "字段2": "值2",
+    // ... 略
+}
+```
+#### 局部修改
+局部修改是只修改指定id匹配的文档中的部分字段。
+```
+POST /{索引库名}/_update/文档id
+{
+    "doc": {
+         "字段名": "新的值",
+    }
+}
+```
+## 批量处理
+- ElasticSearch中允许通过一次请求中携带多次文档操作，也就是批量处理
+```Java
+POST _bulk
+{ "index" : { "_index" : "test", "_id" : "1" } }
+{ "field1" : "value1" }
+{ "delete" : { "_index" : "test", "_id" : "2" } }
+{ "create" : { "_index" : "test", "_id" : "3" } }
+{ "field1" : "value3" }
+{ "update" : {"_id" : "1", "_index" : "test"} }
+{ "doc" : {"field2" : "value2"} }
+```
+- index代表新增操作
+  - _index：指定索引库名
+  - _id指定要操作的文档id
+  - { "field1" : "value1" }：则是要新增的文档内容
+- delete代表删除操作
+  - _index：指定索引库名
+  - _id指定要操作的文档id
+- update代表更新操作
+  - _index：指定索引库名
+  - _id指定要操作的文档id
+  - { "doc" : {"field2" : "value2"} }：要更新的文档字段
+
+## JavaRestClient
+- 由于ES目前最新版本是8.8，提供了全新版本的客户端，老版本的客户端已经被标记为过时。而我们采用的是7.17版本，因此只能使用老版本客户端：
+### 初始化RestClient
+- 在elasticsearch提供的API中，与elasticsearch一切交互都封装在一个名为RestHighLevelClient的类中，必须先完成这个对象的初始化，建立与elasticsearch的连接。
+#### 引入依赖
+```xml
+<dependency>
+    <groupId>org.elasticsearch.client</groupId>
+    <artifactId>elasticsearch-rest-high-level-client</artifactId>
+</dependency>
+```
+#### 覆盖版本
+```xml
+  <properties>
+      <elasticsearch.version>7.17.4</elasticsearch.version>
+  </properties>
+
+```
+#### 初始化RestHighLevelClient
+```Java
+RestHighLevelClient client = new RestHighLevelClient(RestClient.builder(
+        HttpHost.create("http://192.168.139.1:9200")
+));
+```
+- 新版
+```Java
+restClient = RestClient.builder(
+                new HttpHost("192.168.139.1", 9200)
+        ).build(); 
+```
+```Java
+public class ElasticTest {
+    private RestClient restClient;
+
+    @BeforeEach
+    void setUp() {
+        restClient = RestClient.builder(
+                new HttpHost("192.168.139.1", 9200)
+        ).build();
+    }
+
+    @AfterEach
+    void tearDown() throws IOException {
+        if (restClient != null) {
+            restClient.close();
+        }
+    }
+}
+```
+
+
+### 商品Mapping映射 {id="mapping_1"}
+#### Java代码创建映射
+```Java
+@Test
+    public void testCreateMapping() throws IOException {
+        //创建索引库
+        String index = "{\n" +
+                "  \"mappings\": {\n" +
+                "    \"properties\": {\n" +
+                "      \"id\": {\n" +
+                "        \"type\": \"keyword\"\n" +
+                "      },\n" +
+                "      \"title\": {\n" +
+                "        \"type\": \"text\",\n" +
+                "        \"analyzer\": \"ik_max_word\",\n" +
+                "        \"search_analyzer\": \"ik_smart\"\n" +
+                "      },\n" +
+                "      \"subTitle\": {\n" +
+                "        \"type\": \"text\",\n" +
+                "        \"analyzer\": \"ik_max_word\",\n" +
+                "        \"search_analyzer\": \"ik_smart\"\n" +
+                "      },\n" +
+                "      \"price\": {\n" +
+                "        \"type\": \"float\"\n" +
+                "      }";
+        // 准备request对象
+        CreateIndexRequest request = new CreateIndexRequest("hmall_item");
+        request.source(index, XContentType.JSON);
+        //发送请求
+        client.indices().create(request, RequestOptions.DEFAULT);
+    }
+```
+#### 查找
+```Java
+@Test
+    public void testSearch() throws IOException {
+        // 准备request对象
+        GetIndexRequest request = new GetIndexRequest("hmall_item");
+        boolean exists = client.indices().exists(request, RequestOptions.DEFAULT);
+        System.out.println(exists);
+    }
+```
+#### 删除
+```Java
+
+ @Test
+    public void testDeleteMapping() throws IOException {
+        // 准备request对象
+        DeleteIndexRequest request = new DeleteIndexRequest("hmall_item");
+        //发送请求
+        client.indices().delete(request, RequestOptions.DEFAULT);
+    }
+```
+
+### 新增文档
+```Java
+
+public void testIndexDocument() throws IOException {
+        //准备文档数据
+        Item json = itemService.getById(1L);
+        ItemDoc itemDoc = BeanUtils.copyProperties(json, ItemDoc.class);
+        IndexRequest request = new IndexRequest("hmall_item").id(itemDoc.getId()).source(JSONUtil.toJsonStr(itemDoc), XContentType.JSON);
+        client.index(request, RequestOptions.DEFAULT);
+    }
+```
+### 删除文档
+```Java
+ @Test
+    public void testDeleteDocument() throws IOException {
+        client.delete(new DeleteRequest("hmall_item", "1"), RequestOptions.DEFAULT);
+    }
+
+```
+### 获得文档数据
+```Java
+@Test
+    public void testGetDocument() throws IOException {
+       GetResponse response = client.get(new GetRequest("hmall_item", "1"), RequestOptions.DEFAULT);
+        // source 是数据
+        String json = response.getSourceAsString();
+        ItemDoc doc = JSONUtil.toBean(json, ItemDoc.class);
+        System.out.println(doc);
+    }
+```
+
+#### 修改文档
+- 全局更新
+```Java
+public void testUpdateDocument() throws IOException {
+        Item json = itemService.getById(1L);
+        ItemDoc itemDoc = BeanUtils.copyProperties(json, ItemDoc.class);
+        IndexRequest request = new IndexRequest("hmall_item").id(itemDoc.getId()).source(JSONUtil.toJsonStr(itemDoc), XContentType.JSON);
+        client.index(request, RequestOptions.DEFAULT);
+    }
+```
+- 局部更新
+```Java
+@Test
+    public void testUpdateDocument2() throws IOException {
+        UpdateRequest request = new UpdateRequest("hmall_item", "1");
+        request.doc(
+                "price",25600,
+                "title","小米手机",
+                "brand","小米"
+        );
+        client.update(request, RequestOptions.DEFAULT);
+    } 
+```
+### 文档批处理
+- 批处理代码流程与之前类似，只不过构建请求会用到一个名为BulkRequest来封装普通的CRUD
+```Java
+public void testBulk() throws IOException {
+        int pageNo = 1, pageSize = 500;
+        while (true) {
+            List<Item> records = itemService.lambdaQuery()
+                    .eq(Item::getStatus, 1)
+                    .page(Page.of(pageNo, pageSize)).getRecords();
+            if (records.isEmpty()) {
+                return;
+            }
+            BulkRequest bulkRequest = new BulkRequest();
+            records.forEach(item -> {
+                ItemDoc itemDoc = BeanUtils.copyProperties(item, ItemDoc.class);
+                IndexRequest indexRequest = new IndexRequest("hmall_item").id(itemDoc.getId())
+                        .source(JSONUtil.toJsonStr(itemDoc), XContentType.JSON);
+                bulkRequest.add(indexRequest);
+            });
+            client.bulk(bulkRequest, RequestOptions.DEFAULT);
+            pageNo++;
+        }
+    }
+```

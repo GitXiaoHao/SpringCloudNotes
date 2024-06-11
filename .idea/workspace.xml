@@ -5,22 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c3332f-ed88-4ece-b836-4f6fb9621236" name="更改" comment="commit">
-      <change afterPath="$PROJECT_DIR$/Writerside/images/delayMessage1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/delayMessage2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/delayMessage3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/dlx1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/es1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/es2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/es3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/ik1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/ik2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/lazyQueue1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/es10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/es11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/es4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/es6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/es7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/es8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/es9.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Writerside/mq/rabbitmq_delayed_message_exchange-3.13.0.ez" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/topics/Elasticsearch.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/topics/Elasticsearch02.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Writerside/s.tree" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/s.tree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Writerside/topics/RabbitMQ.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/RabbitMQ.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Writerside/topics/RabbitMQ高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/RabbitMQ高级.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Elasticsearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Elasticsearch.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +81,33 @@
             </ColorState>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../spring-cloud-interview/Writerside/in.tree">
+          <value>
+            <ColorState>
+              <option name="customOrder" value="2" />
+              <option name="first">
+                <RgbState>
+                  <option name="blue" value="225" />
+                  <option name="darkBlue" value="225" />
+                  <option name="darkGreen" value="149" />
+                  <option name="darkRed" value="56" />
+                  <option name="green" value="149" />
+                  <option name="red" value="56" />
+                </RgbState>
+              </option>
+              <option name="second">
+                <RgbState>
+                  <option name="blue" value="234" />
+                  <option name="darkBlue" value="234" />
+                  <option name="darkGreen" value="197" />
+                  <option name="darkRed" value="81" />
+                  <option name="green" value="197" />
+                  <option name="red" value="81" />
+                </RgbState>
+              </option>
+            </ColorState>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
@@ -106,6 +129,9 @@
     "last_opened_file_path": "I:/Writerside/SpringCloud/Writerside/mq",
     "settings.editor.selected.configurable": "preferences.general",
     "writerside.last.selected.productSpringCloud": "s"
+  },
+  "keyToStringList": {
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
   }
 }]]></component>
   <component name="RecentsManager">
