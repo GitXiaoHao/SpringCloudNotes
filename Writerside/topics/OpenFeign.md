@@ -48,8 +48,8 @@ feign:
     enabled: true
 ```
 ## 最佳实践
-![拆分1](拆分1)
-![拆分2](拆分2)
+![拆分1](拆分1.png)
+![拆分2](拆分2.png)
 - 如果报错 则是实体类没有被扫描到
 `@EnableFeignClients(basePackages = "com.hmall.api.client")`
 ## 日志

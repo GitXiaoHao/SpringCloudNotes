@@ -4,7 +4,7 @@
 
 <instance-profile id="s"
                  name="SpringCloud"
-                 start-page="starter-topic.md">
+                 start-page="RabbitMQ.md">
 
     <toc-element topic="RabbitMQ.md"/>
     <toc-element topic="RabbitMQ高级.md"/>
@@ -14,7 +14,6 @@
     <toc-element topic="网关.md"/>
     <toc-element topic="OpenFeign.md"/>
     <toc-element topic="SpringCloud.md"/>
-    <toc-element topic="starter-topic.md"/>
     <toc-element topic="配置管理.md"/>
     <toc-element topic="微服务保护和分布式事务-雪崩问题.md"/>
     <toc-element topic="Sentinel.md"/>
