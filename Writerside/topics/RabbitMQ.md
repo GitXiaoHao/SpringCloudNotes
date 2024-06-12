@@ -44,7 +44,7 @@ rabbitmq:3.8-management
 #### 安装erlang
 - 点击刚才下载的otp_win64_23.0.exe。
 - 接下来配置环境变量，常规操作，新建系统变量-键入变量名ERLANG_HOME，键入变量值:erlang安装路径
-- 然后添加系统path路径中，添加 ： %ERLANG_HOME%\bin
+- 然后添加系统path路径中，添加 ： `%ERLANG_HOME%\bin`
 - 然后打开cmd，输入erl，看到我们的erlang版本号，就说明安装成功了
 #### 安装RabbitMQ {id="rabbitmq_1"}
 - 双击我们刚才下载的rabbitmq-server-3.8.5程序，next，install即可，此处需要注意，如果要自定义安装路径的话，路径中最好不要存在中文，会出现错误。
